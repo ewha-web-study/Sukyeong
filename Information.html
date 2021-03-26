@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SelfIntroduction</title>
+        <script>
+            var Link = {
+                setColor:function(color){
+                    var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length){
+                    alist[i].style.color = color;
+                    i = i+1;
+                    }
+                }
+            }
+            var Body = {
+                setColor:function(color){
+                    document.querySelector('body').style.color = color;
+                },
+                setBackgroundColor:function(color){
+                    document.querySelector('body').style.backgroundColor = color;
+                }
+            }
+            function nightDayHandler(self){
+                var target = document.querySelector('body');
+                if(self.value ==='night'){
+                    Body.setBackgroundColor('black');
+                    Body.setColor('white');
+                    self.value = 'day';
+                    Link.setColor('yellow');
+                } else{
+                    Body.setBackgroundColor('white');;
+                    Body.setColor('black');
+                    self.value = 'night';
+                    Link.setColor('blue');
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Information</h1>
+        <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
+            <ol>
+                    <li>이름</li>
+                    <li>학과</li>
+                    <li>MBTI</li>
+            </ol>
+            <p>
+                <h3>1. 이름</h3>
+                    서수경 입니다!!!!! 
+             </p>
+             <p>
+                <h3>2. 학과</h3>
+                    이화여자대학교 엘텍공과대학 소프트웨어학부 컴퓨터공학전공 입니다! 사실 저 수학과에서 전과해서 왔습니다 (TMI 죄송합니다)
+             </p>
+             <p>
+                <h3>3. MBTI</h3>
+                    'ENFJ' 입니다! 10번 검사하면 10번 다 ENFJ가 나오더라구요 ^^,,
+             </p>
+    </body>
+</html>
