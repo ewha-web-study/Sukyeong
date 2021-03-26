@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SelfIntroduction</title>
+        <script>
+            var Link = {
+                setColor:function(color){
+                    var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length){
+                    alist[i].style.color = color;
+                    i = i+1;
+                    }
+                }
+            }
+            var Body = {
+                setColor:function(color){
+                    document.querySelector('body').style.color = color;
+                },
+                setBackgroundColor:function(color){
+                    document.querySelector('body').style.backgroundColor = color;
+                }
+            }
+            function nightDayHandler(self){
+                var target = document.querySelector('body');
+                if(self.value ==='night'){
+                    Body.setBackgroundColor('black');
+                    Body.setColor('white');
+                    self.value = 'day';
+                    Link.setColor('yellow');
+                } else{
+                    Body.setBackgroundColor('white');;
+                    Body.setColor('black');
+                    self.value = 'night';
+                    Link.setColor('blue');
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Advantages</h1>
+        <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
+            <ol>
+                    <li>잠이 거의 없고 체력이 좋다</li>
+                    <li>밝다</li>
+                    <li>사람을 좋아한다</li>
+            </ol>
+        <p>
+            <h3>1. 잠이 거의 없고 체력이 좋다</h3>
+            저는 선천적으로 잠을 조금만 자도 괜찮더라구요..! 개발자한테 생각보다 중요한거라고 들어서 장점에 넣게 되었네요 ㅋㅎㅋㅎ 혹시 밤에 고민 있는데 얘기할 곳이 없다면 저에게 연락하세요~~~~~
+        </p>
+        <p>
+            <h3>2. 밝다</h3>
+            그냥 매일 신나있어요! 무슨 일이 있지 않은 이상 항상 웃고 있습니다ㅋㅋㅋㅋㅋㅋ 계속 웃고 있어서 저 처음보시는 분들은 의아해하시거나 같이 웃으셔서 넣었슴다. 웃고 살아요 우리
+        </p>
+        <p>
+            <h3>3. 사람을 좋아한다</h3>
+            사람 만나는 걸 매우 좋아해요! 새로운 사람이든 원래 알던 사람이든 좋아요 ㅎㅎ 친해지고 싶슴다..
+        </p>
+    </body>
+</html>
