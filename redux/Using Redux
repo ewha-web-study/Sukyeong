@@ -1,0 +1,26 @@
+은행원(창구직원) = dispatch
+은행장부에 기록하는사람(업무기록일지 기록) = reducer
+장부 = state
+
+// 리듀서 함수 state와 action을 인자로 받음. 
+function reducer(state, action){
+// state가 'undefined'일때, 옐로우를 리턴함. 
+	if(state === undefined) {
+	return {color : 'yellow'}
+	}
+}
+
+// 전역변수 어디서든 실행이 가능함.
+var store = Redux.createStore(reducer);
+console.log(store.getState());
+
+
+<정리>
+
+스토어를 만들면 내부적으로 스테이트가 만들어지고,
+스테이트를 가져오려면 '겟스테이트'를 써야한다. 
+reducer를 통해서 state를 만들어줘야하는데, 그때
+reducer의 기존 state값이 undefined라면 초기화를 위해 최초 실행되는 리듀서의 호출이기 때문에
+초기값을 리턴해준다면 리덕스의 스토어에 초기값이 지정이됨.
+
+var store = Redux.createStore(reducer);
