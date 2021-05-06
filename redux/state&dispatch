@@ -1,0 +1,44 @@
+Store
+store라는 은행안에 정보가 저장됨.
+state 라는 실제 정보가 저장이 되는데 우리는 직접 접근할수가 없음.
+
+우리가 store를 만들때 reducer라는 함수를 만들어 공급해야함.
+
+// reducer 함수 호출.. 
+function reducer(oldState, action) {
+
+//...
+이곳을 작성하는것이 리덕스를 만드는 일이라 해도 관이 아님. 정말 중요한 역할을 
+하는것이 리듀서임. 
+}
+// 리덕스의 크리에이트 스토어가 되면 스토어가 생성이됨. (꼭줘야할 인자는 reducer)
+var store = Redux.createStore(reducer)
+
+
+render
+ui를 만들어주는 우리가 만들어야 할 코드. 이 스토어에있는 스테이트에 직접 접속하는것이
+금지되어있기 때문에, 은행에 있는돈을 직접 만질수 없고, 창구 직원을 통해 해결하듯
+
+아래의 3가지의 중요한 함수들이 있는데
+
+dispatch, subscribe , getstate 
+
+렌더와 서로 협력해서 어플리케이션을 만들어야함.
+아래와 같은 구조.
+
+function render() {
+
+var state = store.getState();
+//
+
+document.querySelector('#app').innerHTML =
+
+<h1>WEB</h1>
+
+
+state값을 참조해서 render가 ui를 만들어줌.
+현재 state를 반영한 ui를 만들기 때문에 스테이트값이 바뀔때마다 render함수가 호출되면 얼마나좋을까? 
+알아서 ui가 갱신되지않을까 ? 그때 사용하는것 => '구독'함수이다
+
+store.subscribe(render)
+이렇게 등록하면, 스테이트값이 바뀔때마다 ui값이 새롭게 바뀜.
