@@ -1,0 +1,21 @@
+state값의 변경 ?
+변경위해선 action을 만들고 이것을 dispatch에 제출. 
+reducer를 호출하는데 이것이 이전의 state값과 액션의 값을 동시에 줌. 
+reducer 함수가 분석해서 이것을 state최종값으로 리턴해줌.
+
+// type는 반드시 존재해야 하는 property 이다. 
+store.dispatch({type:'change_color', color'red'});
+
+reducer 함수는 store의 stae값을변경해준다.
+
+이전 값에 있던 복제한 값을 리턴해야하지만 리덕스를 최대한 활용 가능
+
+state값이 바뀔때마다 red함수가 호출이됨. (색깔이 바뀜.)
+
+store.subscribe(red); 
+red();
+
+
+리덕스를 사용하는이유 ?
+어떻게 리덕스를 사용하면서 서로간의 의존성을 낮출 수 있는가 ?
+각자의 부품은 stand alone으로 사용할수 있었는가?
